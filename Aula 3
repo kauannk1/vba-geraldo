@@ -17,7 +17,7 @@ Sub TesteComentário_2()
     v_z = v_x + v_y
     'Criando caixa de mensagem:
     MsgBox ("O resultado da soma é: " & v_z)
-    MsgBox "O resultado da soma de " & v_x & " e " & v_y & " é " & v_z 'Utilize o & para juntar as variáveis no msgbox 'Para juntar as variáveis na caixa de mensagem, utilize o & (significa "merge")
+    MsgBox "O resultado da soma de " & v_x & " e " & v_y & " é " & v_z 'Utilize o & para juntar as variáveis no msgbox
 
 End Sub
 
