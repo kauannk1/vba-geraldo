@@ -195,5 +195,49 @@ Sub exitforDemo()
             Exit For
         End If
     Next linha
+End Sub
+
+
+Sub fillCells()
+    Dim linha As Long
+    Dim coluna As Long
     
+    For coluna = 1 To 5
+        For linha = 1 To 12 'referece diretamente a numeragem da linha
+        Cells(linha, coluna) = Rnd
+        Next linha
+    Next coluna
+End Sub
+
+Sub do_While() 'Faca enquanto a condição for verdadeira
+    Do While ActiveCell.Value <> Empty 'Faça enquanto célula ativa for diferente de vazio:
+        ActiveCell.Value = ActiveCell.Value * 2
+        ActiveCell.Offset(1, 0).Select 'Selecionar a próxima
+    Loop
+        
+End Sub
+
+Sub do_While_2()
+    Do
+        ActiveCell.Value = ActiveCell.Value * 2
+        ActiveCell.Offset(1, 0).Select
+    Loop While ActiveCell.Value <> Empty
+End Sub
+
+
+
+'Mesma função porém com condição diferente
+
+Sub do_Until() 'Faça até que a condição for verdadeira
+    Do Until IsEmpty(ActiveCell.Value)
+        ActiveCell.Value = ActiveCell.Value * 2
+        ActiveCell.Offset(1, 0).Select
+    Loop
+End Sub
+
+Sub do_Until_2()
+    Do
+        ActiveCell.Value = ActiveCell.Value * 2
+        ActiveCell.Offset(1, 0).Select
+    Loop Until IsEmpty(ActiveCell.Value)
 End Sub
