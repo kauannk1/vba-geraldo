@@ -241,3 +241,21 @@ Sub do_Until_2()
         ActiveCell.Offset(1, 0).Select
     Loop Until IsEmpty(ActiveCell.Value)
 End Sub
+'Coleções de objetos
+Sub collectionTest()
+    Dim planilha As Worksheet 'definindo variável "planilha" como uma planilha do excel
+    
+    For Each planilha In ActiveWorkbook.Worksheets 'para cara planilha em planilhas ativas no excel
+        planilha.Rows(1).Delete 'deletar uma linha da planilha
+    Next planilha 'proxima planilha
+End Sub
+
+Sub changeSignal()
+    Dim celula As Range 'definindo variável "celula" como uma célula na planilha (range)
+    
+    For Each celula In Range("A1:E50") 'para cada range na range entre A1:E50
+        If IsNumeric(celula.Value) Then 'se o valor for numérico
+            celula.Value = celula.Value * -1 'Multiplicar por -1 (inverter o valor para positivo ou negativo)
+        End If
+    Next celula
+End Sub
