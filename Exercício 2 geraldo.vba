@@ -1,5 +1,5 @@
 'Exercício 1
-Sub Exercício_1()
+Sub Exercicio_1()
     Dim numero As Integer
     numero = InputBox("Digite um número inteiro: ")
     If numero > 20 Then
@@ -9,7 +9,7 @@ Sub Exercício_1()
 End Sub
 
 'Exercício 2
-Sub Exercício_2()
+Sub Exercicio_2()
     Dim numero1 As Integer
     Dim numero2 As Integer
     
@@ -21,19 +21,22 @@ Sub Exercício_2()
     End If
 End Sub
 
-Sub Exercício_3()
+'Exercicio 3
+Sub Exercicio_3()
     Dim numero1 As Integer
     Dim numero2 As Integer
     
     numero1 = InputBox("Digite um número inteiro: ")
     numero2 = InputBox("Digite outro número inteiro: ")
     soma = numero1 + numero2
-    maior = soma + 8
-    menor = soma - 5
+    acrescimo = soma + 8
+    decrescimo = soma - 5
     
-    Select Case soma
-        Case Is > 20: maior
-            
-    MsgBox ("O somatório de: " & numero1 & numero2 & " = " & soma)
+    If soma > 20 Then
+    MsgBox ("O somatório de: " & numero1 & " + " & numero2 & " = " & soma & " (+8 pois é maior que 20) -> " & acrescimo)
+    
+    Else
+    MsgBox ("O somatório de: " & numero1 & " + " & numero2 & " = " & soma & " (-5 pois é menor que 20) -> " & decrescimo)
     End If
+    
 End Sub
