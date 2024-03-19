@@ -171,7 +171,7 @@ Sub exercicio_10()
     contador = 0
     somaSalario = 0
     maiorIdade = 0
-    menorIdade = 999
+    menorIdade = 999 'Garante que qualquer idade seja considerada menor inicialmente
     
     Do
         idade = InputBox("Digite a idade (ou uma idade negativa para sair):")
