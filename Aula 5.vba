@@ -56,4 +56,20 @@ Sub copypasteTest()
     Range("C1").Select
     Sheets("Planilha1").Paste
 End Sub
+Sub copypasteTest2()
+    Range("A1:A12").Copy Range("C1")
+    
+End Sub
 
+Sub clearTest()
+    Columns("C:C").Clear
+    
+    'Clear: Apaga tudo
+    'ClearContents: apaga o conteúdo da célula, preservando a formatação
+    'ClearFormats: apaga a formatação da célula, preservando o conteúdo
+End Sub
+
+Sub deleteTest()
+    Columns("C:C").Delete
+    'Apaga a coluna e a realoca, a coluna seguinte (D ) se torna a ( C ) que foi apagada
+End Sub
