@@ -123,13 +123,13 @@ Sub exercicio_8()
     voto3 = InputBox("Digite o número de votos do terceiro candidato: ")
     
     If voto1 > voto2 And voto1 > voto3 Then
-    MsgBox cand1 & " é o ganhador, com " & voto1 & " votos"
+        MsgBox cand1 & " é o ganhador, com " & voto1 & " votos"
     
     ElseIf voto2 > voto1 And voto2 > voto3 Then
-    MsgBox cand2 & " é o ganhador, com " & voto2 & " votos"
+        MsgBox cand2 & " é o ganhador, com " & voto2 & " votos"
 
     Else
-    MsgBox cand3 & " é o ganhador, com " & voto3 & " votos"
+        MsgBox cand3 & " é o ganhador, com " & voto3 & " votos"
     End If
     
 End Sub
@@ -149,9 +149,69 @@ Sub exercicio_9()
     "4 --------> Divisão dos números")
     
     If escolha = 1 Then
-    MsgBox num1 & "+" & num2 & " = " & num1 + num2
+        MsgBox num1 & "+" & num2 & " = " & num1 + num2
         ElseIf escolha = 2 Then MsgBox num1 & "-" & num2 & " = " & num1 - num2
         ElseIf escolha = 3 Then MsgBox num1 & "*" & num2 & " = " & num1 * num2
         Else: MsgBox num1 & "/" & num2 & " = " & num1 / num2
     End If
+End Sub
+
+Sub exercicio_10()
+    Dim idade As Integer
+    Dim sexo As String
+    Dim salario As Double
+    Dim contador As Integer
+    Dim somaSalario As Double
+    Dim maiorIdade As Integer
+    Dim menorIdade As Integer
+    Dim qntmulhersalAlto As Integer
+    Dim mediaSalario As Double
+    
+    ' iniciando os contadores
+    contador = 0
+    somaSalario = 0
+    maiorIdade = 0
+    menorIdade = 999
+    
+    Do
+        idade = InputBox("Digite a idade (ou uma idade negativa para sair):")
+        
+        If idade < 0 Then
+            MsgBox "Você inseriu uma idade negativa. O loop será encerrado."
+            Exit Do
+        End If
+        
+        If idade > maiorIdade Then
+            maiorIdade = idade
+        End If
+        
+        If idade < menorIdade Then
+            menorIdade = idade
+        End If
+        
+        sexo = InputBox("Digite o sexo (M/F):")
+        
+        salario = InputBox("Digite o salário:")
+        
+        If salario < 0 Then
+            MsgBox "O salário não pode ser negativo. Por favor, insira um valor válido."
+            salario = InputBox("Digite o salário:")
+        End If
+        
+        somaSalario = somaSalario + salario
+        
+        If sexo = "F" And salario > 600 Then
+            qntmulhersalAlto = qntmulhersalAlto + 1
+        End If
+        
+        contador = contador + 1
+        
+    Loop
+    
+    mediaSalario = somaSalario / contador
+    
+    MsgBox "Média do salário dos habitantes: R$" & Format(mediaSalario, "0.00") & Chr(13) & _
+           "Maior idade do grupo: " & maiorIdade & Chr(13) & _
+           "Menor idade do grupo: " & menorIdade & Chr(13) & _
+           "Quantidade de mulheres com salários superiores a R$ 600,00: " & qntmulhersalAlto
 End Sub
