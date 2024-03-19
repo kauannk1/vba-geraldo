@@ -134,3 +134,24 @@ Sub exercicio_8()
     
 End Sub
 
+Sub exercicio_9()
+    Dim escolha As Integer
+    
+    Dim num1 As Integer
+    Dim num2 As Integer
+    
+    num1 = InputBox("Digite um número inteiro: ")
+    num2 = InputBox("Digite outro número inteiro: ")
+    escolha = InputBox("Escolha uma das opções a seguir: " & Chr(13) & Chr(13) & _
+    "1 --------> Soma dos números" & Chr(13) & _
+    "2 --------> Subtração dos números" & Chr(13) & _
+    "3 --------> Multiplicação dos números" & Chr(13) & _
+    "4 --------> Divisão dos números")
+    
+    If escolha = 1 Then
+    MsgBox num1 & "+" & num2 & " = " & num1 + num2
+        ElseIf escolha = 2 Then MsgBox num1 & "-" & num2 & " = " & num1 - num2
+        ElseIf escolha = 3 Then MsgBox num1 & "*" & num2 & " = " & num1 * num2
+        Else: MsgBox num1 & "/" & num2 & " = " & num1 / num2
+    End If
+End Sub
