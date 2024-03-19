@@ -45,3 +45,13 @@ Sub exercicio_3()
     MsgBox "A área de uma circunferência de raio " & raio & " é: " & area & "cm²"
     
 End Sub
+
+Sub exercicio_4()
+    Dim n1 As Integer
+    Dim n2 As Integer
+    
+    n1 = InputBox("Digite um número inteiro")
+    n2 = InputBox("Digite outro número inteiro")
+    MsgBox "A fórmula: " & "(" & n1 & "+" & n2 & ")²" & " = " & (n1 * n1) + (n2 * n2) + (n1 * n2)
+End Sub
+
