@@ -143,10 +143,10 @@ Sub exercicio_9()
     num1 = InputBox("Digite um número inteiro: ")
     num2 = InputBox("Digite outro número inteiro: ")
     escolha = InputBox("Escolha uma das opções a seguir: " & Chr(13) & Chr(13) & _
-    "1 --------> Soma dos números" & Chr(13) & _
-    "2 --------> Subtração dos números" & Chr(13) & _
-    "3 --------> Multiplicação dos números" & Chr(13) & _
-    "4 --------> Divisão dos números")
+    "(1) --------> Soma dos números" & Chr(13) & _
+    "(2) --------> Subtração dos números" & Chr(13) & _
+    "(3) --------> Multiplicação dos números" & Chr(13) & _
+    "(4) --------> Divisão dos números")
     
     If escolha = 1 Then
         MsgBox num1 & "+" & num2 & " = " & num1 + num2
