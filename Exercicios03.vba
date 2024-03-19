@@ -171,7 +171,7 @@ Sub exercicio_10()
     contador = 0
     somaSalario = 0
     maiorIdade = 0
-    menorIdade = 999 'Garante que qualquer idade seja considerada menor inicialmente
+    menorIdade = 999 'Garante que qualquer idade seja considerada menor inicia
     
     Do
         idade = InputBox("Digite a idade (ou uma idade negativa para sair):")
@@ -214,4 +214,86 @@ Sub exercicio_10()
            "Maior idade do grupo: " & maiorIdade & Chr(13) & _
            "Menor idade do grupo: " & menorIdade & Chr(13) & _
            "Quantidade de mulheres com salários superiores a R$ 600,00: " & qntmulhersalAlto
+End Sub
+
+Sub exercicio_11()
+    Dim escolha As Integer
+
+    Dim quantcachquente As Integer
+    Dim quanthamb As Integer
+    Dim quantxtudo As Integer
+    Dim quantrefri As Integer
+    Dim quantsuco As Integer
+    
+    Dim Somacachquente As Integer
+    Dim Somahamb As Integer
+    Dim Somaxtudo As Integer
+    Dim Somarefri As Integer
+    Dim Somasuco As Integer
+    
+    Dim valorhamb As Double
+    Dim valorcachquente As Double
+    Dim valorxtudo As Double
+    Dim valorrefri As Double
+    Dim valorsuco As Double
+    
+    
+    
+    Do
+        escolha = InputBox("Qual o código do produto?" & Chr(13) & Chr(13) & _
+            "(100) - Cachorro Quente ----- R$ 3,50" & Chr(13) & _
+            "(101) - Hambúrguer --------- R$ 3,00" & Chr(13) & _
+            "(102) - X-Tudo --------------- R$ 5,00" & Chr(13) & _
+            "(103) - Refrigerante ---------- R$ 2,50" & Chr(13) & _
+            "(104) - Suco ------------------ R$ 1,50" & Chr(13) & Chr(13) & _
+            "(  0  ) - Encerrar o pedido")
+            
+        If escolha = 0 Then
+            MsgBox "Você encerrou o pedido."
+            Exit Do
+        End If
+            
+            
+        If escolha = 100 Then
+            quantcachquente = InputBox("Qual a quantidade de Cachorro Quente desejada?")
+            Somacachquente = Somacachquente + quantcachquente
+            valorcachquente = Somacachquente * 3.5
+            
+        ElseIf escolha = 101 Then
+            quanthamb = InputBox("Qual a quantidade de Hambúrguer desejada?")
+            Somahamb = Somahamb + quanthamb
+            valorhamb = Somahamb * 4
+            
+        ElseIf escolha = 102 Then
+            quantxtudo = InputBox("Qual a quantidade de X-Tudo desejada?")
+            Somaxtudo = Somaxtudo + quantxtudo
+            valorxtudo = Somaxtudo * 5
+            
+        ElseIf escolha = 103 Then
+            quantrefri = InputBox("Qual a quantidade de Refrigerante Quente desejada?")
+            Somarefri = Somarefri + quantrefri
+            valorrefri = Somarefri * 2.5
+            
+        ElseIf escolha = 104 Then
+            quantsuco = InputBox("Qual a quantidade de Suco Quente desejada?")
+            Somasuco = Somasuco + quantsuco
+            valorsuco = Somasuco * 1.5
+        Else
+            MsgBox "Por favor, digite algum código válido!"
+        End If
+        
+    Loop
+            Total = valorcachquente + valorhamb + valorxtudo + valorrefri + valorsuco
+            MsgBox " O valor de " & Somacachquente & " Cachorros Quentes é: R$ " & Format(valorcachquente, "0.00") & Chr(13) & _
+                    "----------------------------------------------------------" & Chr(13) & _
+                    " O valor de " & Somahamb & " Hambúrgueres é: R$ " & Format(valorhamb, "0.00") & Chr(13) & _
+                    "----------------------------------------------------------" & Chr(13) & _
+                    " O valor de " & Somaxtudo & " X-Tudos é: R$ " & Format(valorxtudo, "0.00") & Chr(13) & _
+                    "----------------------------------------------------------" & Chr(13) & _
+                    " O valor de " & Somarefri & " Refrigerantes é: R$ " & Format(valorrefri, "0.00") & Chr(13) & _
+                    "----------------------------------------------------------" & Chr(13) & _
+                    " O valor de " & Somasuco & " Sucos é: R$ " & Format(valorsuco, "0.00") & Chr(13) & _
+                    "----------------------------------------------------------" & Chr(13) & _
+                    " O valor total do pedido ficou R$ " & Format(Total, "0.00")
+
 End Sub
