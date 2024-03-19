@@ -30,5 +30,18 @@ Sub exercicio_2()
     "A subtração " & n1 & " - " & n2 & " equivale a: " & n1 - n2 & Chr(13) & _
     "A multiplicação " & n1 & " * " & n2 & " equivale a: " & n1 * n2 & Chr(13) & _
     "A divisão " & n1 & " / " & n2 & " equivale a: " & n1 / n2
+
+End Sub
+
+Sub exercicio_3()
+    Dim pi As Double
+    Dim raio As Double
+    Dim area As Double
+    
+    
+    pi = 3.14159
+    raio = InputBox("Digite o raio da circunferência em centímetros")
+    area = pi * (raio * raio)
+    MsgBox "A área de uma circunferência de raio " & raio & " é: " & area & "cm²"
     
 End Sub
