@@ -114,7 +114,58 @@ Sub exercicio_3()
         MsgBox "A parcela a deduzir do IRPF é R$ " & imposto
     End If
 
-
-
-
 End Sub
+
+
+Sub exercicio_4()
+
+    Dim n1 As Double
+    Dim n2 As Double
+    Dim n3 As Double
+    Dim n4 As Double
+    Dim PR As Double
+    Dim ED As Double
+    
+    Dim media_n As Double
+    Dim finalMedia As Double
+    
+    Dim disciplina As String
+    Dim nome As String
+    Dim situation As String
+    
+    
+    nome = InputBox("Digite o nome do aluno: ")
+    disciplina = InputBox("Digite o nome da disciplina: ")
+    
+    n1 = InputBox("Digite a primeira nota")
+    n2 = InputBox("Digite a segunda nota")
+    n3 = InputBox("Digite a terceira nota")
+    n4 = InputBox("Digite a quarta nota")
+    
+    media_n = (n1 + n2 + n3 + n4) / 4
+    
+    PR = InputBox("Digite a nota do Provão")
+    ED = InputBox("Digite a nota do Estudo Dirigido")
+    
+    finalMedia = (media_n * 0.2) + (ED * 0.2) + (PR * 0.6) / (100 / 100)
+    
+    If finalMedia >= 6 Then
+        situation = "APROVADO"
+    Else
+        situation = "REPROVADO"
+    End If
+    
+    MsgBox "Nome: " & nome & Chr(13) & _
+            "Disciplina: " & disciplina & Chr(13) & Chr(13) & _
+            "Nota 1: " & n1 & Chr(13) & _
+            "Nota 2: " & n2 & Chr(13) & _
+            "Nota 3: " & n3 & Chr(13) & _
+            "Nota 4: " & n4 & Chr(13) & _
+            "Média das 4 notas: " & media_n & Chr(13) & Chr(13) & _
+            "Nota Provão: " & PR & Chr(13) & _
+            "Nota Estudo Dirigido: " & ED & Chr(13) & Chr(13) & _
+            "Média final do aluno: " & finalMedia & Chr(13) & Chr(13) & _
+            "Situação do aluno: " & situation
+            
+End Sub
+
