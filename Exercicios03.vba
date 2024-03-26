@@ -419,3 +419,35 @@ Sub exercicio_14()
     MsgBox resultado2
 
 End Sub
+
+Sub exercicio_15()
+
+    Dim angulo As Integer
+    Dim radiano As Double
+    Dim pi As Double
+
+    Dim msgBox1 As String
+    Dim msgBox2 As String
+    Dim msgBox3 As String
+    
+    Dim counter As Integer
+    
+    pi = 3.1415926536
+
+    For angulo = 0 To 360 Step 5
+        counter = counter + 1
+        radiano = FormatNumber((angulo * pi / 180), 4)
+        If counter <= 24 Then
+            msgBox1 = msgBox1 & angulo & " graus = " & radiano & " radianos" & Chr(13)
+        ElseIf counter <= 48 Then
+            msgBox2 = msgBox2 & angulo & " graus = " & radiano & " radianos" & Chr(13)
+        Else
+            msgBox3 = msgBox3 & angulo & " graus = " & radiano & " radianos" & Chr(13)
+        End If
+    Next angulo
+    
+    MsgBox msgBox1
+    MsgBox msgBox2
+    MsgBox msgBox3
+
+End Sub
