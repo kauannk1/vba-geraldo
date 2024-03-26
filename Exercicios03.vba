@@ -297,3 +297,125 @@ Sub exercicio_11()
                     " O valor total do pedido ficou R$ " & Format(Total, "0.00")
 
 End Sub
+
+Sub exercicio_12()
+    Dim nome As String
+    Dim idade As Integer
+    Dim sexo As String
+    Dim estado As String
+    
+        nome = InputBox("Digite o nome completo: ")
+        idade = InputBox("Digite a idade: ")
+        sexo = InputBox("Digite o sexo (em letra maiúscula): " & Chr(13) & _
+                        " ( F ) ----> Feminino " & Chr(13) & _
+                        " ( M ) ----> Masculino ")
+            If sexo = "M" Then
+                sexo = "Masculino"
+            
+            ElseIf sexo = "F" Then
+                sexo = "Feminino"
+            
+            Else
+                MsgBox "Você não digitou um sexo válido!"
+                Exit Sub
+            End If
+                
+        estado = InputBox("Digite o estado civil (em letra maiúscula): " & Chr(13) & _
+                        " ( C ) ----> Casado " & Chr(13) & _
+                        " ( S ) ----> Solteiro " & Chr(13) & _
+                        " ( D ) ----> Divorciado " & Chr(13) & _
+                        " ( V ) ----> Viúvo ")
+                        
+            Select Case estado
+            Case "C"
+                estado = "Casado"
+            Case "S"
+                estado = "Solteiro"
+            Case "D"
+                estado = "Divorciado"
+            Case "V"
+                estado = "Viúvo"
+            Case Else
+                MsgBox "Você não digitou um estado civil válido!"
+                Exit Sub
+        End Select
+        
+        MsgBox "Nome: " & nome & Chr(13) & _
+               "Idade: " & idade & Chr(13) & _
+               "Sexo: " & sexo & Chr(13) & _
+               "Estado Civil: " & estado
+
+End Sub
+
+Sub exercicio_13()
+
+Dim idade As Integer
+Dim risco As String
+
+    idade = InputBox("Digite a idade para determinar o risco de venda da apólice de seguro: ")
+    
+    If idade >= 18 And idade <= 24 Then
+        risco = "Baixo"
+        MsgBox "O risco de venda de uma apólice para a pessoa de " & idade & " anos é: " & risco & "."
+        
+    ElseIf idade > 24 And idade <= 40 Then
+        risco = "Médio"
+        MsgBox "O risco de venda de uma apólice para a pessoa de " & idade & " anos é: " & risco & "."
+        
+    ElseIf idade > 40 And idade <= 70 Then
+        risco = "Alto"
+        MsgBox "O risco de venda de uma apólice para a pessoa de " & idade & " anos é: " & risco & "."
+
+    Else
+        MsgBox "Não é possível adquirir uma apólice de seguro."
+        
+    End If
+    
+End Sub
+
+Sub exercicio_14()
+
+    Dim num As Integer
+    Dim divisor As Integer
+    Dim primo As Boolean
+    Dim resultado1 As String
+    Dim resultado2 As String
+    Dim contPrimos1 As Integer
+    Dim contPrimos2 As Integer
+
+    resultado1 = "Resultados dos números de 1 a 25:" & Chr(13)
+    resultado2 = "Resultados dos números de 26 a 50:" & Chr(13)
+    contPrimos1 = 0
+    contPrimos2 = 0
+
+    For num = 1 To 50
+        primo = True
+        For divisor = 2 To num - 1
+            If num Mod divisor = 0 Then
+                primo = False
+                Exit For
+            End If
+        Next divisor
+        
+        If num <= 25 Then
+            If primo Then
+                resultado1 = resultado1 & "O número " & num & " é PRIMO" & Chr(13)
+                contPrimos1 = contPrimos1 + 1
+            Else
+                resultado1 = resultado1 & "O número " & num & " NÃO é PRIMO" & Chr(13)
+            End If
+        Else
+            If primo Then
+                resultado2 = resultado2 & "O número " & num & " é PRIMO" & Chr(13)
+                contPrimos2 = contPrimos2 + 1
+            Else
+                resultado2 = resultado2 & "O número " & num & " NÃO é PRIMO" & Chr(13)
+            End If
+        End If
+    Next num
+    
+    ' Exibe os resultados em duas MsgBox
+    MsgBox resultado1
+    MsgBox resultado2
+
+End Sub
