@@ -81,8 +81,40 @@ Sub exercicio_2()
         MsgBox "Salário antigo: R$ " & inisalario & Chr(13) & _
                 " Aumento de: R$ " & aumento & Chr(13) & _
                 " Novo salario: R$ " & finalsalario
+   
+End Sub
+
+Sub exercicio_3()
+
+    Dim salario As Double
+    Dim imposto As Double
+    Dim nome As String
+
+    nome = InputBox("Digite o nome do funcionário: ")
+    salario = InputBox("Digite o salário do funcionário: R$ ")
     
     
-    
-    
+    If salario < 1903.98 Then
+        MsgBox "O funcionário não paga IRPF"
+        
+    ElseIf salario >= 1903.99 And salario < 2826.65 Then
+        imposto = salario * 0.075
+        MsgBox "A parcela a deduzir do IRPF é R$ " & imposto
+        
+    ElseIf salario >= 2826.66 And salario < 3751.05 Then
+        imposto = salario * 0.15
+        MsgBox "A parcela a deduzir do IRPF é R$ " & imposto
+        
+    ElseIf salario >= 3751.06 And salario <= 4664.68 Then
+        imposto = salario * 0.225
+        MsgBox "A parcela a deduzir do IRPF é R$ " & imposto
+        
+    ElseIf salario > 4664.68 Then
+        imposto = salario * 0.275
+        MsgBox "A parcela a deduzir do IRPF é R$ " & imposto
+    End If
+
+
+
+
 End Sub
