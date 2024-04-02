@@ -49,3 +49,38 @@ Sub testeVerificaCelula()
         Exit Sub
     End If
 End Sub
+
+
+Function Tabuada(numero As Integer, inicio As Integer, fim As Integer) As String
+    Dim resultado As String
+    Dim multiplyer As Integer
+    
+    ' Verifica se o início é menor ou igual ao final da tabuada
+    If inicio <= fim Then
+        For multiplyer = inicio To fim
+            resultado = resultado & numero & " x " & multiplyer & " = " & numero * multiplyer & Chr(13)
+        Next multiplyer
+    Else
+        resultado = "O início da tabuada deve ser menor ou igual ao final da tabuada."
+    End If
+    
+    ' Retorna a tabuada calculada
+    Tabuada = resultado
+End Function
+
+Sub MostrarTabuada()
+    Dim numero As Integer
+    Dim inicio As Integer
+    Dim fim As Integer
+    Dim tabuada_resultado As String
+    
+    numero = InputBox("Digite o número para o qual deseja calcular a tabuada:")
+    
+    inicio = InputBox("Digite o início da tabuada:")
+    
+    fim = InputBox("Digite o final da tabuada:")
+    
+    tabuada_resultado = Tabuada(numero, inicio, fim)
+    
+    MsgBox tabuada_resultado
+End Sub
