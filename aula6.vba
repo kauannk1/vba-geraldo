@@ -84,3 +84,41 @@ Sub MostrarTabuada()
     
     MsgBox tabuada_resultado
 End Sub
+
+Function fn_maior_menor(num1 As Integer, num2 As Integer, num3 As Integer) As String
+    Dim maior As Integer
+    Dim menor As Integer
+    
+    If (num1 > num2) Then
+        maior = num1
+        menor = num2
+    Else
+        maior = num2
+        menor = num1
+    End If
+    If (num3 > maior) Then
+        maior = num3
+    End If
+        
+    If (num3 < menor) Then
+        menor = num3
+    End If
+    
+    fn_maior_menor = "O maior valor é o " & maior & " e o menor valor é o " & menor
+    
+End Function
+
+Sub maior_menor()
+    Dim num1 As Integer
+    Dim num2 As Integer
+    Dim num3 As Integer
+    Dim result As String
+    
+    num1 = InputBox("Digite o primeiro número")
+    num2 = InputBox("Digite o segundo número")
+    num3 = InputBox("Digite o terceiro número")
+
+    result = fn_maior_menor(num1, num2, num3)
+    
+    MsgBox result
+End Sub
