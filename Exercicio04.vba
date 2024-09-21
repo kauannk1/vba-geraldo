@@ -26,6 +26,9 @@ Sub exercicio_1()
 
     If pesoatual > pesoideal Then
         MsgBox "O paciente está ACIMA do seu peso ideal"
+    Else
+        MsgBox "O paciente NÃO está acima do seu peso ideal"
+
     End If
 End Sub
 
